@@ -1,0 +1,8 @@
+{
+  "name": "mochila-publicitaria",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix \"mochila-publicitaria-app\" run dev",
+    "build": "npm --prefix \"mochila-publicitaria-app\" run build"
+  }
+}

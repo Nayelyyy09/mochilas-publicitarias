@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochilas Publicitarias | Soluciones Corporativas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --accent-hover: #d63851;
+            --surface: #ffffff;
+            --surface-alt: #f8f9fa;
+            --text: #2d3436;
+            --text-light: #636e72;
+            --text-muted: #b2bec3;
+            --border: #e9ecef;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--surface);
+            line-height: 1.6;
+        }
+
+        /* ============ HEADER ============ */
+        .header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            background: var(--primary);
+            color: white;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-top a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .header-main {
+            padding: 16px 0;
+        }
+
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 14px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav a:hover {
+            color: var(--accent);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-actions a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 480px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+        }
+
+        /* ============ CATEGORIES ============ */
+        .categories {
+            padding: 80px 0;
+            background: var(--surface-alt);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .category-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--surface-alt);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-icon {
+            background: var(--accent);
+            color: white;
+        }
+
+        .category-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .category-card span {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* ============ PRODUCTS ============ */
+        .products {
+            padding: 80px 0;
+        }
+
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .products-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .products-header a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .product-image {
+            position: relative;
+            padding-top: 100%;
+            background: var(--surface-alt);
+            overflow: hidden;
+        }
+
+        .product-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--accent);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .product-badge.new {
+            background: #00b894;
+        }
+
+        .product-quick-view {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
+            background: white;
+            color: var(--text);
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            font-weight: 600;
+            font-size: 13px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            width: calc(100% - 24px);
+        }
+
+        .product-card:hover .product-quick-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-quick-view:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 12px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .product-title a:hover {
+            color: var(--accent);
+        }
+
+        .product-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .stars {
+            color: #ffc107;
+        }
+
+        .product-code {
+            font-size: 12px;
+            color: var(--text-muted);
+            background: var(--surface-alt);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        /* ============ FEATURES ============ */
+        .features {
+            padding: 80px 0;
+            background: var(--surface-alt);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 32px 24px;
+        }
+
+        .feature-icon {
+            width: 72px;
+            height: 72px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .feature p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* ============ CTA ============ */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta .btn-primary:hover {
+            background: var(--surface-alt);
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .footer h4 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer li {
+            margin-bottom: 12px;
+        }
+
+        .footer a {
+            color: white;
+            opacity: 0.7;
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        /* ============ PRODUCT DETAIL ============ */
+        .product-detail {
+            padding: 60px 0;
+        }
+
+        .product-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .product-gallery {
+            position: sticky;
+            top: 100px;
+        }
+
+        .product-main-image {
+            background: var(--surface-alt);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin-bottom: 16px;
+        }
+
+        .product-main-image img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+        }
+
+        .product-thumbnails {
+            display: flex;
+            gap: 12px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            background: var(--surface-alt);
+            border-radius: var(--radius-sm);
+            padding: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: var(--accent);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .product-detail-info {
+            padding-top: 20px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .breadcrumb a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: var(--text-muted);
+        }
+
+        .product-detail-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .product-detail-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .product-detail-rating {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .product-detail-rating .stars {
+            font-size: 16px;
+        }
+
+        .product-detail-rating span {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .product-detail-code {
+            font-size: 13px;
+            color: var(--text-muted);
+            background: var(--surface-alt);
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        .product-detail-description {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .product-features {
+            margin-bottom: 32px;
+        }
+
+        .product-features h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .features-list li::before {
+            content: '✓';
+            color: #00b894;
+            font-weight: 600;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .product-actions .btn {
+            flex: 1;
+            justify-content: center;
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1da851;
+        }
+
+        .product-trust {
+            margin-top: 32px;
+            padding: 24px;
+            background: var(--surface-alt);
+            border-radius: var(--radius);
+        }
+
+        .trust-items {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .trust-item-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero p {
+                margin: 0 auto 32px;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .categories-grid,
+            .products-grid,
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .categories-grid,
+            .products-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+        }
+
+        /* ============ ANIMATIONS ============ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* ============ WHATSAPP FLOAT ============ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <span>Envíos a todo el Perú | Pedidos mínimos desde 50 unidades</span>
+                <a href="tel:+51979795128">📞 (+51) 979 795 128</a>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🎒</span>
+                    Mochilas Publicitarias
+                </a>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Productos</a></li>
+                        <li><a href="#">Categorías</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#">🔍 Buscar</a>
+                    <a href="#">📋 Cotización</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">✨ Fabricantes directos en Perú</span>
+                <h1>Mochilas que potencian tu marca</h1>
+                <p>Soluciones corporativas de alta calidad para congresos, eventos y promociones. Personalización completa con tu logotipo.</p>
+                <div class="hero-actions">
+                    <a href="#productos" class="btn btn-primary">Ver Catálogo</a>
+                    <a href="#contacto" class="btn btn-outline">Solicitar Cotización</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Empresas confían en nosotros</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Mochilas entregadas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Años de experiencia</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://www.mochilaspublicitarias.pe/public/dashboard/logistica/movimientos/img/producto/mochila_clasica_reforzada_1728108141.jpg" alt="Mochila Corporativa">
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestras Categorías</h2>
+                <p>Encuentra la mochila perfecta para tu próximo evento o campaña publicitaria</p>
+            </div>
+            <div class="categories-grid">
+                <a href="#" class="category-card">
+                    <div class="category-icon">💼</div>
+                    <h3>Mochilas Corporativas</h3>
+                    <span>+80 modelos</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon">📋</div>
+                    <h3>Maletines</h3>
+                    <span>+45 modelos</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon">🎒</div>
+                    <h3>Loncheras</h3>
+                    <span>+30 modelos</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon">👕</div>
+                    <h3>Merchandising Textil</h3>
+                    <span>+100 productos</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="productos">
+        <div class="container">
+            <div class="products-header">
+                <h2>Productos Destacados</h2>
+                <a href="#">Ver todo el catálogo →</a>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.mochilaspublicitarias.pe/public/dashboard/logistica/movimientos/img/producto/mochila_clasica_reforzada_1728108141.jpg" alt="Mochila Corporativa MCP0005">
+                        <span class="product-badge new">Nuevo</span>
+                        <button class="product-quick-view">Cotizar Ahora</button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Mochila Corporativa</span>
+                        <h3 class="product-title">
+                            <a href="#">Mochila Corporativa Publicitaria - MCP0005</a>
+                        </h3>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>(12)</span>
+                            </div>
+                            <span class="product-code">MCP0005</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.mochilaspublicitarias.pe/public/dashboard/logistica/movimientos/img/producto/mochilas_para_eventos_empresariales_1752532382.jpg" alt="Mochila Económica">
+                        <span class="product-badge">-20%</span>
+                        <button class="product-quick-view">Cotizar Ahora</button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Mochila Económica</span>
+                        <h3 class="product-title">
+                            <a href="#">Mochila Publicitaria Económica - MCP0016</a>
+                        </h3>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>(8)</span>
+                            </div>
+                            <span class="product-code">MCP0016</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.mochilaspublicitarias.pe/public/dashboard/logistica/movimientos/img/producto/mochilas_ergona_micas_1752532218.jpg" alt="Mochila Ergonómica">
+                        <span class="product-badge new">Nuevo</span>
+                        <button class="product-quick-view">Cotizar Ahora</button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Mochila Ergonómica</span>
+                        <h3 class="product-title">
+                            <a href="#">Mochila Publicitaria Ergonómica - MPE0015</a>
+                        </h3>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span>(5)</span>
+                            </div>
+                            <span class="product-code">MPE0015</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.mochilaspublicitarias.pe/public/dashboard/logistica/movimientos/img/producto/mochilas_ligeras_y_resistentes_1752532108.jpg" alt="Mochila Resistente">
+                        <button class="product-quick-view">Cotizar Ahora</button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Mochila Resistente</span>
+                        <h3 class="product-title">
+                            <a href="#">Mochila Publicitaria Resistente - MPE0014</a>
+                        </h3>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>(15)</span>
+                            </div>
+                            <span class="product-code">MPE0014</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Por qué elegirnos?</h2>
+                <p>Somos fabricantes directos con la mejor calidad y servicio</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🏭</div>
+                    <h3>Fabricantes Directos</h3>
+                    <p>Sin intermediarios, mejores precios y tiempos de entrega rápidos</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Personalización Total</h3>
+                    <p>Bordado, impresión y relief con tu logotipo corporativo</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Envío a Todo Perú</h3>
+                    <p>Entregas seguras en Lima y todo el territorio nacional</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Calidad Garantizada</h3>
+                    <p>Materiales premium y control de calidad en cada producto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>¿Listo para potenciar tu marca?</h2>
+            <p>Solicita una cotización sin compromiso y descubre las mejores opciones para tu empresa</p>
+            <a href="#" class="btn btn-primary">Solicitar Cotización Gratis</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Mochilas Publicitarias</h3>
+                    <p>Fabricantes directos de mochilas corporativas y artículos publicitarios en Perú. Más de 15 años de experiencia brindando soluciones de merchandising a empresas de todo el país.</p>
+                </div>
+                <div>
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="#">Mochilas Corporativas</a></li>
+                        <li><a href="#">Maletines</a></li>
+                        <li><a href="#">Loncheras</a></li>
+                        <li><a href="#">Gorros y Polos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Catálogo</a></li>
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="tel:+51979795128">📞 (+51) 979 795 128</a></li>
+                        <li><a href="mailto:ventas@mochilaspublicitarias.pe">✉️ ventas@mochilaspublicitarias.pe</a></li>
+                        <li><a href="#">📍 Lima, Perú</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2024 Mochilas Publicitarias. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://api.whatsapp.com/send?phone=51979795128" class="whatsapp-float" target="_blank">
+        💬
+    </a>
+</body>
+</html>
