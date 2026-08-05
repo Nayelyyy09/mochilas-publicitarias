@@ -1,9 +1,262 @@
-export default function Neceseres() {
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Star } from "lucide-react";
+
+const productos = [
+  {
+    id: 1,
+    codigo: "ML001",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín AC Farma",
+    imagen: "/imagenes/maletines/Maletin AC Farma.png",
+    rating: 5,
+  },
+  {
+    id: 2,
+    codigo: "ML002",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín ACCP",
+    imagen: "/imagenes/maletines/Maletin ACCP.png",
+    rating: 5,
+  },
+  {
+    id: 3,
+    codigo: "ML003",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín Autopista del Norte",
+    imagen: "/imagenes/maletines/Maletin Autopista del Norte.png",
+    rating: 5,
+  },
+  {
+    id: 4,
+    codigo: "ML004",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín CBC",
+    imagen: "/imagenes/maletines/Maletin CBC.png",
+    rating: 5,
+  },
+  {
+    id: 5,
+    codigo: "ML005",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín Clínica Internacional",
+    imagen: "/imagenes/maletines/Maletin Clinica Internacional.png",
+    rating: 5,
+  },
+  {
+    id: 6,
+    codigo: "ML006",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín Heineken",
+    imagen: "/imagenes/maletines/Maletin Heineken.png",
+    rating: 5,
+  },
+  {
+    id: 7,
+    codigo: "ML007",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín Latina Black",
+    imagen: "/imagenes/maletines/Maletin Latina Black.png",
+    rating: 5,
+  },
+  {
+    id: 8,
+    codigo: "ML008",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín Latina",
+    imagen: "/imagenes/maletines/Maletin Latina.png",
+    rating: 5,
+  },
+  {
+    id: 9,
+    codigo: "ML009",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín Ochosur Verde",
+    imagen: "/imagenes/maletines/Maletin Ochosur Verde.png",
+    rating: 5,
+  },
+  {
+    id: 10,
+    codigo: "ML010",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín Sentrix Largo",
+    imagen: "/imagenes/maletines/Maletin Sentrix largo.png",
+    rating: 5,
+  },
+  {
+    id: 11,
+    codigo: "ML011",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín Sentrix",
+    imagen: "/imagenes/maletines/Maletin Sentrix.png",
+    rating: 5,
+  },
+  {
+    id: 12,
+    codigo: "ML012",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín Sodimac",
+    imagen: "/imagenes/maletines/Maletin Sodimac.png",
+    rating: 5,
+  },
+  {
+    id: 13,
+    codigo: "ML013",
+    categoria: "Maletines Publicitarios",
+    nombre: "Maletín Stracon",
+    imagen: "/imagenes/maletines/Maletin Stracon.png",
+    rating: 5,
+  },
+];
+
+const PRODUCTOS_POR_PAGINA = 8;
+export default function Maletines() {
+  const [paginaActual, setPaginaActual] = useState(1);
+
+  const totalPaginas = Math.ceil(
+    productos.length / PRODUCTOS_POR_PAGINA
+  );
+
+  const indiceInicial =
+    (paginaActual - 1) * PRODUCTOS_POR_PAGINA;
+
+  const productosActuales = productos.slice(
+    indiceInicial,
+    indiceInicial + PRODUCTOS_POR_PAGINA
+  );
+
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-5xl font-bold">
-        Maletines
-      </h1>
-    </div>
+    <section className="py-10 px-4 lg:px-8">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border border-gray-200">
+
+        {productosActuales.map((item) => (
+
+          <div
+            key={item.id}
+            className="border border-gray-200 bg-white hover:shadow-xl transition duration-300"
+          >
+
+            <div className="p-5">
+
+              <img
+                src={item.imagen}
+                alt={item.nombre}
+                className="w-full h-72 object-contain"
+              />
+
+              <Link
+                to={`/productos/maletines/${item.codigo}`}
+                className="block w-full mt-4 py-3 rounded bg-[#6B6B6B] hover:bg-[#0D8B87] text-center text-white font-semibold transition"
+              >
+                Cotizar
+              </Link>
+
+              <p className="mt-4 text-xs uppercase text-[#6B6B6B]">
+                {item.categoria}
+              </p>
+
+              <h3 className="mt-2 text-[24px] leading-9 font-semibold text-[#6B6B6B]">
+                {item.nombre}
+              </h3>
+
+              <div className="flex items-center gap-1 mt-4">
+
+                {Array.from({ length: item.rating }).map((_, index) => (
+                  <Star
+                    key={index}
+                    size={14}
+                    className="fill-yellow-400 text-yellow-400"
+                  />
+                ))}
+
+                <span className="ml-2 text-[#6B6B6B]">
+                  100% calidad
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        ))}
+
+      </div>
+
+      {/* Paginación */}
+      <div className="flex justify-center items-center gap-3 mt-12 flex-wrap">
+
+        {Array.from(
+          { length: totalPaginas },
+          (_, index) => (
+            <button
+              key={index + 1}
+              onClick={() => {
+                setPaginaActual(index + 1);
+
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }}
+              className={`
+                w-11
+                h-11
+                rounded-full
+                border
+                text-sm
+                font-semibold
+                transition-all
+                duration-300
+
+                ${
+                  paginaActual === index + 1
+                    ? "bg-[#6B6B6B] border-[#6B6B6B] text-white"
+                    : "border-gray-300 text-[#6B6B6B] hover:bg-[#6B6B6B] hover:text-white hover:border-[#6B6B6B]"
+                }
+              `}
+            >
+              {index + 1}
+            </button>
+          )
+        )}
+
+        {/* Siguiente */}
+        <button
+          onClick={() => {
+            if (paginaActual < totalPaginas) {
+              setPaginaActual((prev) => prev + 1);
+
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }
+          }}
+          disabled={paginaActual === totalPaginas}
+          className={`
+            w-11
+            h-11
+            rounded-full
+            border
+            text-lg
+            font-semibold
+            transition-all
+            duration-300
+
+            ${
+              paginaActual === totalPaginas
+                ? "opacity-40 cursor-not-allowed border-gray-300 text-gray-400"
+                : "border-gray-300 text-[#6B6B6B] hover:bg-[#6B6B6B] hover:text-white hover:border-[#6B6B6B]"
+            }
+          `}
+        >
+          &gt;
+        </button>
+
+      </div>
+
+    </section>
   );
 }
