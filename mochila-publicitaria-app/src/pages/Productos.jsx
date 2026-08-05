@@ -47,7 +47,7 @@ const PRODUCTS = [
     description: "Mochila de alta calidad para regalos corporativos y eventos especiales.",
     image: "https://publiventa.pe/wp-content/uploads/2025/09/Mesa-de-trabajo-7-7.jpg",
     badge: "Premium",
-    badgeColor: "bg-[#1a1a2e]",
+    badgeColor: "bg-[#6B6B6B]",
     rating: 5,
     reviews: 6,
     features: ["Acabados premium", "Material de alta calidad", "Diseño exclusivo", "Mínimo 50 unidades"],
@@ -73,7 +73,7 @@ const PRODUCTS = [
     description: "Solución económica para campañas de marketing masivas y eventos corporativos.",
     image: "https://publiventa.pe/wp-content/uploads/2025/09/Mesa-de-trabajo-12-1.jpg",
     badge: "-20%",
-    badgeColor: "bg-[#e94560]",
+    badgeColor: "bg-[#1A1A1A]",
     rating: 4,
     reviews: 15,
     features: ["Precio competitivo", "Personalización incluida", "Material ligero", "Mínimo 100 unidades"],
@@ -99,7 +99,7 @@ const PRODUCTS = [
     description: "Mochila premium con diseño elegante para regalos corporativos de alto nivel.",
     image: "https://publiventa.pe/wp-content/uploads/2025/09/Mesa-de-trabajo-6-5.jpg",
     badge: "Premium",
-    badgeColor: "bg-[#1a1a2e]",
+    badgeColor: "bg-[#6B6B6B]",
     rating: 5,
     reviews: 8,
     features: ["Diseño elegante", "Materiales premium", "Acabados de lujo", "Mínimo 50 unidades"],
@@ -164,7 +164,7 @@ const PRODUCTS = [
     description: "Mochila de alta gama para regalos corporativos y eventos especiales.",
     image: "https://publiventa.pe/wp-content/uploads/2025/09/Mesa-de-trabajo-5-6.jpg",
     badge: "Premium",
-    badgeColor: "bg-[#1a1a2e]",
+    badgeColor: "bg-[#6B6B6B]",
     rating: 5,
     reviews: 6,
     features: ["Alta gama", "Acabados premium", "Packaging especial", "Mínimo 50 unidades"],
@@ -229,7 +229,7 @@ const PRODUCTS = [
     description: "Mochila de diseño europeo para eventos corporativos de alto nivel.",
     image: "https://publiventa.pe/wp-content/uploads/2025/09/Mesa-de-trabajo-2-6.jpg",
     badge: "Premium",
-    badgeColor: "bg-[#1a1a2e]",
+    badgeColor: "bg-[#6B6B6B]",
     rating: 5,
     reviews: 7,
     features: ["Diseño europeo", "Materiales premium", "Acabados perfectos", "Mínimo 50 unidades"],
@@ -294,7 +294,7 @@ const PRODUCTS = [
     description: "Mochila de calidad suiza para regalos corporativos exclusivos.",
     image: "https://publiventa.pe/wp-content/uploads/2025/09/Mesa-de-trabajo-4-3.jpg",
     badge: "Premium",
-    badgeColor: "bg-[#1a1a2e]",
+    badgeColor: "bg-[#6B6B6B]",
     rating: 5,
     reviews: 8,
     features: ["Calidad suiza", "Materiales excelentes", "Diseño exclusivo", "Mínimo 50 unidades"],
@@ -380,14 +380,14 @@ function ProductCard({ product, index, onSelect }) {
           </span>
         )}
         <div className={`absolute bottom-3 left-3 right-3 transition-all duration-300 ${hovering ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}>
-          <div className="w-full py-3 bg-[#1a1a2e] text-white text-sm font-semibold rounded-lg text-center">
+          <div className="w-full py-3 bg-[#6B6B6B] text-white text-sm font-semibold rounded-lg text-center">
             Ver Detalle
           </div>
         </div>
       </div>
       <div className="p-5">
         <span className="text-xs text-gray-400 uppercase tracking-wider">{product.categoryLabel}</span>
-        <h3 className="text-sm font-semibold text-gray-800 mt-1 mb-3 line-clamp-2 group-hover:text-[#e94560] transition-colors">{product.name}</h3>
+        <h3 className="text-sm font-semibold text-gray-800 mt-1 mb-3 line-clamp-2 group-hover:text-[#1A1A1A] transition-colors">{product.name}</h3>
         <p className="text-xs text-gray-400 mb-3 line-clamp-2">{product.description}</p>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
@@ -421,13 +421,13 @@ export default function Productos() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <span className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6 text-[#e94560]">
+          <span className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6 text-[#1A1A1A]">
             Nuestro catálogo
           </span>
-          <h1 className="font-heading text-4xl lg:text-5xl font-bold text-[#1a1a2e]">
+          <h1 className="font-heading text-4xl lg:text-5xl font-bold text-[#6B6B6B]">
             Mochilas para cada necesidad
           </h1>
-          <div className="mt-4 mx-auto w-12 h-1 bg-[#e94560] rounded-full" />
+          <div className="mt-4 mx-auto w-12 h-1 bg-[#1A1A1A] rounded-full" />
           <p className="mt-6 text-gray-500 max-w-lg mx-auto">
             Desde opciones económicas hasta modelos premium, tenemos la mochila perfecta para tu empresa.
           </p>
@@ -440,8 +440,8 @@ export default function Productos() {
               onClick={() => setActiveCategory(cat.id)}
               className={`font-body text-sm px-5 py-2.5 rounded-lg transition-all duration-300 ${
                 activeCategory === cat.id
-                  ? "bg-[#1a1a2e] text-white shadow-lg"
-                  : "bg-white text-gray-500 hover:text-[#1a1a2e] border border-gray-200 hover:border-gray-300"
+                  ? "bg-[#6B6B6B] text-white shadow-lg"
+                  : "bg-white text-gray-500 hover:text-[#6B6B6B] border border-gray-200 hover:border-gray-300"
               }`}
             >
               {cat.label}
@@ -463,7 +463,7 @@ export default function Productos() {
         >
           <Link
             to="/contacto"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#e94560] text-white font-body text-sm rounded-lg hover:bg-[#d63851] transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1A1A1A] text-white font-body text-sm rounded-lg hover:bg-[#1E1E1E] transition-all duration-300"
           >
             Solicitar cotización personalizada
             <ArrowRight size={16} />

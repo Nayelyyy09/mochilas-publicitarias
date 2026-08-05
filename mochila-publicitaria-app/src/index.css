@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1a1a2e;
-  --color-secondary: #16213e;
-  --color-accent: #e94560;
-  --color-accent-hover: #d63851;
+  --color-primary: #6B6B6B;
+  --color-secondary: #6B6B6B;
+  --color-accent: #1A1A1A;
+  --color-accent-hover: #1A1A1A;
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -16,5 +16,5 @@ html {
 body {
   font-family: var(--font-body);
   background: #ffffff;
-  color: #1a1a2e;
+  color: #6B6B6B;
 }

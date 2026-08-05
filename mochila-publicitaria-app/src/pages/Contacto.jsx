@@ -68,7 +68,7 @@ export default function Contacto() {
               viewport={{ once: true }}
               className="lg:col-span-3"
             >
-              <h2 className="font-heading text-3xl text-[#1a1a2e] mb-8">
+              <h2 className="font-heading text-3xl text-[#6B6B6B] mb-8">
                 SOLICITAR COTIZACIÓN
               </h2>
 
@@ -84,7 +84,7 @@ export default function Contacto() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#1a1a2e] font-body text-sm focus:outline-none focus:border-[#e94560] transition-colors rounded-lg"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#6B6B6B] font-body text-sm focus:outline-none focus:border-[#1A1A1A] transition-colors rounded-lg"
                       placeholder="Tu nombre"
                     />
                   </div>
@@ -98,7 +98,7 @@ export default function Contacto() {
                       value={formData.company}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#1a1a2e] font-body text-sm focus:outline-none focus:border-[#e94560] transition-colors rounded-lg"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#6B6B6B] font-body text-sm focus:outline-none focus:border-[#1A1A1A] transition-colors rounded-lg"
                       placeholder="Nombre de tu empresa"
                     />
                   </div>
@@ -115,7 +115,7 @@ export default function Contacto() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#1a1a2e] font-body text-sm focus:outline-none focus:border-[#e94560] transition-colors rounded-lg"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#6B6B6B] font-body text-sm focus:outline-none focus:border-[#1A1A1A] transition-colors rounded-lg"
                       placeholder="correo@empresa.com"
                     />
                   </div>
@@ -128,7 +128,7 @@ export default function Contacto() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#1a1a2e] font-body text-sm focus:outline-none focus:border-[#e94560] transition-colors rounded-lg"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#6B6B6B] font-body text-sm focus:outline-none focus:border-[#1A1A1A] transition-colors rounded-lg"
                       placeholder="999 999 999"
                     />
                   </div>
@@ -142,7 +142,7 @@ export default function Contacto() {
                     name="quantity"
                     value={formData.quantity}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#1a1a2e] font-body text-sm focus:outline-none focus:border-[#e94560] transition-colors rounded-lg"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#6B6B6B] font-body text-sm focus:outline-none focus:border-[#1A1A1A] transition-colors rounded-lg"
                   >
                     <option value="">Selecciona</option>
                     <option value="50-100">50 - 100</option>
@@ -163,7 +163,7 @@ export default function Contacto() {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#1a1a2e] font-body text-sm focus:outline-none focus:border-[#e94560] transition-colors resize-none rounded-lg"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#6B6B6B] font-body text-sm focus:outline-none focus:border-[#1A1A1A] transition-colors resize-none rounded-lg"
                     placeholder="Describe tu proyecto..."
                   />
                 </div>
@@ -173,7 +173,7 @@ export default function Contacto() {
                   className={`w-full py-4 font-body text-sm font-semibold tracking-wider transition-all duration-300 flex items-center justify-center gap-2 rounded-lg ${
                     submitted
                       ? "bg-[#00b894] text-white"
-                      : "bg-[#e94560] text-white hover:bg-[#d63851]"
+                      : "bg-[#1A1A1A] text-white hover:bg-[#1E1E1E]"
                   }`}
                 >
                   {submitted ? (
@@ -198,7 +198,7 @@ export default function Contacto() {
               viewport={{ once: true }}
               className="lg:col-span-2"
             >
-              <h3 className="font-heading text-2xl text-[#1a1a2e] mb-8">
+              <h3 className="font-heading text-2xl text-[#6B6B6B] mb-8">
                 INFORMACIÓN
               </h3>
 
@@ -217,12 +217,12 @@ export default function Contacto() {
                     transition={{ delay: i * 0.08 }}
                     className="flex items-start gap-4 p-5 bg-gray-50 rounded-lg hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-gray-100"
                   >
-                    <div className="w-12 h-12 bg-[#e94560]/10 rounded-xl flex items-center justify-center shrink-0">
-                      <item.icon size={18} className="text-[#e94560]" />
+                    <div className="w-12 h-12 bg-[#1A1A1A]/10 rounded-xl flex items-center justify-center shrink-0">
+                      <item.icon size={18} className="text-[#1A1A1A]" />
                     </div>
                     <div>
                       <p className="font-body text-[10px] text-gray-400 tracking-widest uppercase">{item.label}</p>
-                      <p className="font-body text-base font-semibold text-[#1a1a2e]">{item.value}</p>
+                      <p className="font-body text-base font-semibold text-[#6B6B6B]">{item.value}</p>
                       <p className="font-body text-xs text-gray-400">{item.sub}</p>
                     </div>
                   </motion.div>
@@ -231,7 +231,7 @@ export default function Contacto() {
 
               {/* WhatsApp CTA */}
               <div className="mt-8 p-6 bg-[#25d366]/10 rounded-xl border border-[#25d366]/20">
-                <h4 className="font-body text-lg font-semibold text-[#1a1a2e] mb-2">WHATSAPP</h4>
+                <h4 className="font-body text-lg font-semibold text-[#6B6B6B] mb-2">WHATSAPP</h4>
                 <p className="font-body text-sm text-gray-500 mb-4">
                   Respuesta inmediata.
                 </p>

@@ -20,7 +20,7 @@ export default function ProductDetail({ product, onClose }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[70] bg-[#1a1a2e]/80 backdrop-blur-sm flex items-center justify-center p-4"
+        className="fixed inset-0 z-[70] bg-[#6B6B6B]/80 backdrop-blur-sm flex items-center justify-center p-4"
         onClick={onClose}
       >
         <motion.div
@@ -61,13 +61,13 @@ export default function ProductDetail({ product, onClose }) {
                 <X size={22} strokeWidth={1.5} />
               </button>
 
-              <span className="font-body text-xs tracking-[0.3em] uppercase text-[#e94560]">
+              <span className="font-body text-xs tracking-[0.3em] uppercase text-[#1A1A1A]">
                 {product.categoryLabel}
               </span>
-              <h2 className="mt-2 font-heading text-2xl lg:text-3xl font-bold text-[#1a1a2e]">
+              <h2 className="mt-2 font-heading text-2xl lg:text-3xl font-bold text-[#6B6B6B]">
                 {product.name}
               </h2>
-              <div className="mt-3 w-10 h-1 bg-[#e94560] rounded-full" />
+              <div className="mt-3 w-10 h-1 bg-[#1A1A1A] rounded-full" />
 
               <p className="mt-5 font-body text-sm text-gray-500 leading-relaxed">
                 {product.description}
@@ -93,7 +93,7 @@ export default function ProductDetail({ product, onClose }) {
                       key={i}
                       className="font-body text-sm text-gray-600 flex items-center gap-2"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#e94560]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]" />
                       {item}
                     </li>
                   ))}
@@ -109,16 +109,16 @@ export default function ProductDetail({ product, onClose }) {
                   <div className="flex items-center border border-gray-200 rounded-lg">
                     <button
                       onClick={() => setQty(Math.max(50, qty - 50))}
-                      className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[#1a1a2e] transition-colors"
+                      className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[#6B6B6B] transition-colors"
                     >
                       <Minus size={14} />
                     </button>
-                    <span className="w-16 text-center font-body text-sm font-semibold text-[#1a1a2e]">
+                    <span className="w-16 text-center font-body text-sm font-semibold text-[#6B6B6B]">
                       {qty}
                     </span>
                     <button
                       onClick={() => setQty(qty + 50)}
-                      className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[#1a1a2e] transition-colors"
+                      className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[#6B6B6B] transition-colors"
                     >
                       <Plus size={14} />
                     </button>

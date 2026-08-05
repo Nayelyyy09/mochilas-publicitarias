@@ -73,14 +73,14 @@ export default function Nosotros() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#1a1a2e] py-32 lg:py-40">
+      <section className="bg-gradient-to-br from-[#6B6B6B] via-[#6B6B6B] to-[#6B6B6B] py-32 lg:py-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8"
           >
-            <span className="w-2 h-2 bg-[#e94560] rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-[#1A1A1A] rounded-full animate-pulse" />
             <span className="font-body text-xs text-white/70 tracking-wider uppercase">Sobre nosotros</span>
           </motion.span>
 
@@ -92,7 +92,7 @@ export default function Nosotros() {
           >
             Fabricantes directos
             <br />
-            <span className="text-[#e94560]">en Perú</span>
+            <span className="text-[#1A1A1A]">en Perú</span>
           </motion.h1>
 
           <motion.p
@@ -119,7 +119,7 @@ export default function Nosotros() {
                 transition={{ delay: i * 0.1 }}
                 className="text-center"
               >
-                <p className="font-heading text-4xl lg:text-5xl font-bold text-[#e94560]">{s.n}</p>
+                <p className="font-heading text-4xl lg:text-5xl font-bold text-[#1A1A1A]">{s.n}</p>
                 <p className="mt-2 font-body text-sm text-gray-500">{s.l}</p>
               </motion.div>
             ))}
@@ -136,13 +136,13 @@ export default function Nosotros() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="font-body text-xs tracking-[0.3em] uppercase text-[#e94560] mb-4 block">
+            <span className="font-body text-xs tracking-[0.3em] uppercase text-[#1A1A1A] mb-4 block">
               ¿Por qué elegirnos?
             </span>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#1a1a2e]">
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#6B6B6B]">
               Somos tu mejor opción
             </h2>
-            <div className="mt-4 mx-auto w-12 h-1 bg-[#e94560] rounded-full" />
+            <div className="mt-4 mx-auto w-12 h-1 bg-[#1A1A1A] rounded-full" />
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -156,9 +156,9 @@ export default function Nosotros() {
                 className="text-center"
               >
                 <div className="w-18 h-18 bg-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-sm">
-                  <f.icon size={28} className="text-[#e94560]" />
+                  <f.icon size={28} className="text-[#1A1A1A]" />
                 </div>
-                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <h3 className="font-semibold text-[#6B6B6B] mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-500">{f.desc}</p>
               </motion.div>
             ))}
@@ -175,13 +175,13 @@ export default function Nosotros() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="font-body text-xs tracking-[0.3em] uppercase text-[#e94560] mb-4 block">
+            <span className="font-body text-xs tracking-[0.3em] uppercase text-[#1A1A1A] mb-4 block">
               Casos de éxito
             </span>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#1a1a2e]">
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#6B6B6B]">
               Resultados que hablan
             </h2>
-            <div className="mt-4 mx-auto w-12 h-1 bg-[#e94560] rounded-full" />
+            <div className="mt-4 mx-auto w-12 h-1 bg-[#1A1A1A] rounded-full" />
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -198,10 +198,10 @@ export default function Nosotros() {
                   <img src={c.image} alt={c.title} className="w-full h-full object-contain p-4" />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-heading text-lg font-bold text-[#1a1a2e] mb-2">{c.title}</h3>
+                  <h3 className="font-heading text-lg font-bold text-[#6B6B6B] mb-2">{c.title}</h3>
                   <p className="font-body text-sm text-gray-500 mb-4">{c.description}</p>
-                  <div className="px-3 py-2 bg-[#e94560]/10 rounded-lg">
-                    <p className="font-body text-sm font-medium text-[#e94560]">{c.result}</p>
+                  <div className="px-3 py-2 bg-[#1A1A1A]/10 rounded-lg">
+                    <p className="font-body text-sm font-medium text-[#1A1A1A]">{c.result}</p>
                   </div>
                 </div>
               </motion.div>
@@ -219,13 +219,13 @@ export default function Nosotros() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="font-body text-xs tracking-[0.3em] uppercase text-[#e94560] mb-4 block">
+            <span className="font-body text-xs tracking-[0.3em] uppercase text-[#1A1A1A] mb-4 block">
               Testimonios
             </span>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#1a1a2e]">
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#6B6B6B]">
               Lo que dicen nuestros clientes
             </h2>
-            <div className="mt-4 mx-auto w-12 h-1 bg-[#e94560] rounded-full" />
+            <div className="mt-4 mx-auto w-12 h-1 bg-[#1A1A1A] rounded-full" />
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -247,7 +247,7 @@ export default function Nosotros() {
                 <div className="flex items-center gap-3">
                   <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover" />
                   <div>
-                    <p className="font-heading text-sm font-bold text-[#1a1a2e]">{t.name}</p>
+                    <p className="font-heading text-sm font-bold text-[#6B6B6B]">{t.name}</p>
                     <p className="font-body text-xs text-gray-400">{t.role}</p>
                   </div>
                 </div>
@@ -258,7 +258,7 @@ export default function Nosotros() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-[#1a1a2e]">
+      <section className="py-24 bg-[#6B6B6B]">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -273,7 +273,7 @@ export default function Nosotros() {
             </p>
             <Link
               to="/contacto"
-              className="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-[#e94560] text-white font-body text-sm rounded-lg hover:bg-[#d63851] transition-colors"
+              className="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-[#1A1A1A] text-white font-body text-sm rounded-lg hover:bg-[#1E1E1E] transition-colors"
             >
               Contactar ahora
               <ArrowRight size={16} />

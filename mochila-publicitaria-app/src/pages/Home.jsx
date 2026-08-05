@@ -5,10 +5,14 @@ import { Link } from "react-router-dom";
 import ProductDetail from "../components/ProductDetail";
 
 const CATEGORIES = [
-  { icon: "💼", title: "Mochilas Corporativas", count: "+80 modelos", path: "/productos" },
-  { icon: "📋", title: "Maletines", count: "+45 modelos", path: "/productos" },
-  { icon: "🎒", title: "Loncheras", count: "+30 modelos", path: "/productos" },
-  { icon: "👕", title: "Merchandising Textil", count: "+100 productos", path: "/productos" },
+  { icon: "🎒", title: "Mochilas", path: "/mochilas" },
+  { icon: "👜", title: "Neceseres", path: "/neceseres" },
+  { icon: "👟", title: "Chimpuneras", path: "/chimpuneras" },
+  { icon: "💼", title: "Maletines", path: "/maletines" },
+  { icon: "🎽", title: "Canguros", path: "/canguros" },
+  { icon: "🍱", title: "Loncheras", path: "/loncheras" },
+  { icon: "🎒", title: "Morrales", path: "/morrales" },
+  { icon: "🧊", title: "Coolers", path: "/coolers" },
 ];
 
 const FEATURED = [
@@ -30,7 +34,7 @@ const FEATURED = [
     name: "Mochila Costa",
     code: "MOCH005",
     badge: "-20%",
-    badgeColor: "bg-[#e94560]",
+    badgeColor: "bg-[#1A1A1A]",
     rating: 4,
     reviews: 15,
     description: "Solución económica para campañas de marketing masivas y eventos corporativos.",
@@ -85,7 +89,7 @@ function ProductCard({ product, index, onSelect }) {
       </div>
       <div className="p-5">
         <span className="text-xs text-gray-400 uppercase tracking-wider">{product.categoryLabel}</span>
-        <h3 className="text-sm font-semibold text-gray-800 mt-1 mb-3 line-clamp-2 group-hover:text-[#e94560] transition-colors">{product.name}</h3>
+        <h3 className="text-sm font-semibold text-gray-800 mt-1 mb-3 line-clamp-2 group-hover:text-[#1A1A1A] transition-colors">{product.name}</h3>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
             <span className="text-amber-400 text-sm">{"★".repeat(product.rating)}{"☆".repeat(5 - product.rating)}</span>
@@ -108,10 +112,10 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1a1a2e] to-[#16213e] text-white py-16 lg:py-24 relative overflow-hidden">
-        <div className="absolute top-[-50%] right-[-10%] w-[600px] h-[600px] bg-[#e94560]/20 rounded-full blur-[100px]" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section className="bg-gradient-to-br from-[#6B6B6B] to-[#6B6B6B] text-white py-16 lg:py-24 relative overflow-hidden">
+        <div className="absolute top-[-50%] right-[-10%] w-[600px] h-[600px] bg-[#1A1A1A]/20 rounded-full blur-[100px]" />
+        <div className="w-full px-6 lg:px-12 relative z-10">
+          <div className="grid lg:grid-cols-[60%_40%] gap-12 items-center w-full">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -127,7 +131,7 @@ export default function Home() {
                 Soluciones corporativas de alta calidad para congresos, eventos y promociones. Personalización completa con tu logotipo.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/productos" className="inline-flex items-center gap-2 px-8 py-4 bg-[#e94560] text-white font-semibold rounded-lg hover:bg-[#d63851] hover:-translate-y-0.5 transition-all duration-300">
+                <Link to="/productos" className="inline-flex items-center gap-2 px-8 py-4 bg-[#1A1A1A] text-white font-semibold rounded-lg hover:bg-[#1E1E1E] hover:-translate-y-0.5 transition-all duration-300">
                   Ver Catálogo
                 </Link>
                 <Link to="/contacto" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 hover:border-white transition-all duration-300">
@@ -167,7 +171,7 @@ export default function Home() {
       <section className="py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[#1a1a2e] mb-4">Nuestras Categorías</h2>
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[#6B6B6B] mb-4">Nuestras Categorías</h2>
             <p className="text-gray-500 max-w-lg mx-auto">Encuentra la mochila perfecta para tu próximo evento o campaña publicitaria</p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -183,7 +187,7 @@ export default function Home() {
                   to={cat.path}
                   className="group block bg-white rounded-xl p-6 lg:p-8 text-center border border-gray-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-300"
                 >
-                  <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl group-hover:bg-[#e94560] transition-colors duration-300">
+                  <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl group-hover:bg-[#1A1A1A] transition-colors duration-300">
                     {cat.icon}
                   </div>
                   <h3 className="font-semibold text-gray-800 mb-2">{cat.title}</h3>
@@ -200,9 +204,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[#1a1a2e]">Productos Destacados</h2>
+              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[#6B6B6B]">Productos Destacados</h2>
             </div>
-            <Link to="/productos" className="hidden sm:inline-flex items-center gap-1 text-[#e94560] font-medium text-sm hover:underline">
+            <Link to="/productos" className="hidden sm:inline-flex items-center gap-1 text-[#1A1A1A] font-medium text-sm hover:underline">
               Ver todo el catálogo <ArrowRight size={16} />
             </Link>
           </div>
@@ -218,7 +222,7 @@ export default function Home() {
       <section className="py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[#1a1a2e] mb-4">¿Por qué elegirnos?</h2>
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-[#6B6B6B] mb-4">¿Por qué elegirnos?</h2>
             <p className="text-gray-500 max-w-lg mx-auto">Somos fabricantes directos con la mejor calidad y servicio</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -232,9 +236,9 @@ export default function Home() {
                 className="text-center"
               >
                 <div className="w-18 h-18 bg-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-sm">
-                  <f.icon size={28} className="text-[#e94560]" />
+                  <f.icon size={28} className="text-[#1A1A1A]" />
                 </div>
-                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <h3 className="font-semibold text-[#6B6B6B] mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-500">{f.desc}</p>
               </motion.div>
             ))}
@@ -243,7 +247,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-24 bg-gradient-to-br from-[#1a1a2e] to-[#16213e] text-white text-center">
+      <section className="py-20 lg:py-24 bg-gradient-to-br from-[#6B6B6B] to-[#6B6B6B] text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -254,7 +258,7 @@ export default function Home() {
             <p className="text-lg text-white/80 mb-8">Solicita una cotización sin compromiso y descubre las mejores opciones para tu empresa</p>
             <Link
               to="/contacto"
-              className="inline-flex items-center gap-2 px-10 py-5 bg-white text-[#1a1a2e] font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-10 py-5 bg-white text-[#6B6B6B] font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300"
             >
               <MessageCircle size={20} />
               Solicitar Cotización Gratis

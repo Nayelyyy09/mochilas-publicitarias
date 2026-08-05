@@ -4,5 +4,8 @@
   "scripts": {
     "dev": "npm --prefix \"mochila-publicitaria-app\" run dev",
     "build": "npm --prefix \"mochila-publicitaria-app\" run build"
+  },
+  "dependencies": {
+    "swiper": "^14.0.7"
   }
 }

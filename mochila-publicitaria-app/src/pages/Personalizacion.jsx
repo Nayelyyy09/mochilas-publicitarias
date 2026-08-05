@@ -27,14 +27,14 @@ export default function Personalizacion() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#1a1a2e] py-32 lg:py-40">
+      <section className="bg-gradient-to-br from-[#6B6B6B] via-[#6B6B6B] to-[#6B6B6B] py-32 lg:py-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8"
           >
-            <span className="w-2 h-2 bg-[#e94560] rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-[#1A1A1A] rounded-full animate-pulse" />
             <span className="font-body text-xs text-white/70 tracking-wider uppercase">Personalización</span>
           </motion.span>
 
@@ -46,7 +46,7 @@ export default function Personalizacion() {
           >
             Diseñado a la medida
             <br />
-            <span className="text-[#e94560]">de tu empresa</span>
+            <span className="text-[#1A1A1A]">de tu empresa</span>
           </motion.h1>
 
           <motion.p
@@ -69,20 +69,20 @@ export default function Personalizacion() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="font-body text-xs tracking-[0.3em] uppercase text-[#e94560] mb-4 block">
+              <span className="font-body text-xs tracking-[0.3em] uppercase text-[#1A1A1A] mb-4 block">
                 Opciones de personalización
               </span>
-              <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#1a1a2e] leading-tight">
+              <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#6B6B6B] leading-tight">
                 Cada detalle importa
               </h2>
-              <div className="mt-4 w-12 h-1 bg-[#e94560] rounded-full" />
+              <div className="mt-4 w-12 h-1 bg-[#1A1A1A] rounded-full" />
               <p className="mt-6 font-body text-gray-500 leading-relaxed">
                 Desde el color hasta el packaging final, cada aspecto de tu mochila
                 puede ser personalizado para reflejar la identidad de tu empresa.
               </p>
               <Link
                 to="/contacto"
-                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#e94560] text-white font-body text-sm rounded-lg hover:bg-[#d63851] transition-colors"
+                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#1A1A1A] text-white font-body text-sm rounded-lg hover:bg-[#1E1E1E] transition-colors"
               >
                 Solicitar muestra gratis
                 <ArrowRight size={14} />
@@ -97,12 +97,12 @@ export default function Personalizacion() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="group p-5 bg-gray-50 rounded-xl hover:bg-[#1a1a2e] transition-all duration-500 cursor-default"
+                  className="group p-5 bg-gray-50 rounded-xl hover:bg-[#6B6B6B] transition-all duration-500 cursor-default"
                 >
-                  <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#e94560] transition-colors duration-500 shadow-sm">
-                    <opt.icon size={18} className="text-[#e94560] group-hover:text-white transition-colors duration-500" />
+                  <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#1A1A1A] transition-colors duration-500 shadow-sm">
+                    <opt.icon size={18} className="text-[#1A1A1A] group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h4 className="font-heading text-sm font-bold text-[#1a1a2e] group-hover:text-white transition-colors duration-500">
+                  <h4 className="font-heading text-sm font-bold text-[#6B6B6B] group-hover:text-white transition-colors duration-500">
                     {opt.title}
                   </h4>
                   <p className="mt-1 font-body text-xs text-gray-400 group-hover:text-white/60 transition-colors duration-500 leading-relaxed">
@@ -124,13 +124,13 @@ export default function Personalizacion() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="font-body text-xs tracking-[0.3em] uppercase text-[#e94560] mb-4 block">
+            <span className="font-body text-xs tracking-[0.3em] uppercase text-[#1A1A1A] mb-4 block">
               Nuestro proceso
             </span>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#1a1a2e]">
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold text-[#6B6B6B]">
               De la idea a tu empresa
             </h2>
-            <div className="mt-4 mx-auto w-12 h-1 bg-[#e94560] rounded-full" />
+            <div className="mt-4 mx-auto w-12 h-1 bg-[#1A1A1A] rounded-full" />
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-8">
@@ -146,7 +146,7 @@ export default function Personalizacion() {
                 <div className="text-6xl font-heading font-bold text-gray-100 mb-4">
                   {step.num}
                 </div>
-                <h3 className="font-heading text-xl font-bold text-[#1a1a2e] mb-2">
+                <h3 className="font-heading text-xl font-bold text-[#6B6B6B] mb-2">
                   {step.title}
                 </h3>
                 <p className="font-body text-sm text-gray-500 leading-relaxed">
@@ -167,7 +167,7 @@ export default function Personalizacion() {
           >
             <Link
               to="/contacto"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#1a1a2e] text-white font-body text-sm rounded-lg hover:bg-[#16213e] transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#6B6B6B] text-white font-body text-sm rounded-lg hover:bg-[#6B6B6B] transition-colors"
             >
               Comenzar mi proyecto
               <ArrowRight size={16} />

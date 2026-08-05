@@ -5,13 +5,13 @@ import logoImg from "../assets/LOGO_Publi.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a2e] text-white py-16">
+    <footer className="bg-[#6B6B6B] text-white py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <img src={logoImg} alt="Mochilas Publicitarias" className="h-16 w-auto" />
+              <img src={logoImg} alt="Mochilas Publicitarias" className="h-30 w-auto" />
             </Link>
             <p className="text-sm text-white/70 leading-relaxed">
               Fabricantes directos de mochilas corporativas y artículos publicitarios en Perú. Más de 15 años de experiencia brindando soluciones de merchandising a empresas de todo el país.
