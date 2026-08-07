@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
+import ProductDetail from "../components/ProductDetail";
 
 const productos = [
   {
@@ -112,6 +113,7 @@ const productos = [
 const PRODUCTOS_POR_PAGINA = 8;
 export default function Maletines() {
   const [paginaActual, setPaginaActual] = useState(1);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const totalPaginas = Math.ceil(
     productos.length / PRODUCTOS_POR_PAGINA
@@ -134,7 +136,26 @@ export default function Maletines() {
 
           <div
             key={item.id}
-            className="border border-gray-200 bg-white hover:shadow-xl transition duration-300"
+            onClick={() =>
+              setSelectedProduct({
+                image: item.imagen,
+                name: item.nombre,
+                code: item.codigo,
+                categoryLabel: "Maletín Publicitario",
+                badge: "Nuevo",
+                badgeColor: "bg-emerald-500",
+                rating: 5,
+                reviews: 8,
+                description: "Maletín publicitario personalizado ideal para empresas.",
+                features: [
+                  "Personalización con logo",
+                  "Material resistente",
+                  "Diseño corporativo",
+                  "Mínimo 50 unidades",
+                ],
+              })
+            }
+            className="border border-gray-200 bg-white hover:shadow-xl transition duration-300 cursor-pointer"
           >
 
             <div className="p-5">
@@ -151,13 +172,14 @@ export default function Maletines() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e)=>e.stopPropagation()}
                 className="block w-full mt-4 py-3 rounded bg-[#6B6B6B] hover:bg-[#0D8B87] text-center text-white font-semibold transition"
               >
                 Cotizar
               </a>
 
               <p className="mt-4 text-xs uppercase text-[#6B6B6B]">
-                {item.categoria}
+                Maletín
               </p>
 
               <h3 className="mt-2 text-[24px] leading-9 font-semibold text-[#6B6B6B]">
@@ -166,7 +188,7 @@ export default function Maletines() {
 
               <div className="flex items-center gap-1 mt-4">
 
-                {Array.from({ length: item.rating }).map((_, index) => (
+                {Array.from({ length: 5 }).map((_, index) => (
                   <Star
                     key={index}
                     size={14}
@@ -261,6 +283,12 @@ export default function Maletines() {
 
       </div>
 
-    </section>
+          {selectedProduct && (
+        <ProductDetail
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
+</section>
   );
 }

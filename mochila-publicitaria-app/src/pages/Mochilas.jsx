@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
+import ProductDetail from "../components/ProductDetail";
 
 const productos = [
   { id: 1, codigo: "M001", nombre: "Caña Brava", imagen: "/imagenes/mochilas/Caña Brava.png" },
@@ -57,6 +58,7 @@ const PRODUCTOS_POR_PAGINA = 8;
 
 export default function Mochilas() {
   const [paginaActual, setPaginaActual] = useState(1);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const totalPaginas = Math.ceil(
     productos.length / PRODUCTOS_POR_PAGINA
@@ -77,10 +79,29 @@ export default function Mochilas() {
 
         {productosActuales.map((item) => (
 
-          <div
-            key={item.id}
-            className="border border-gray-200 bg-white hover:shadow-xl transition duration-300"
-          >
+        <div
+          key={item.id}
+          onClick={() =>
+            setSelectedProduct({
+              image: item.imagen,
+              name: item.nombre,
+              code: item.codigo,
+              categoryLabel: "Mochila Corporativa",
+              badge: "Nuevo",
+              badgeColor: "bg-emerald-500",
+              rating: 5,
+              reviews: 8,
+              description: "Mochila publicitaria personalizada ideal para eventos corporativos.",
+              features: [
+                "Personalización con logo",
+                "Material resistente",
+                "Diseño corporativo",
+                "Mínimo 50 unidades",
+              ],
+            })
+          }
+          className="border border-gray-200 bg-white hover:shadow-xl transition duration-300 cursor-pointer"
+        >
 
             <div className="p-5">
 
@@ -102,7 +123,7 @@ export default function Mochilas() {
               </a>
 
               <p className="mt-4 text-xs uppercase text-[#6B6B6B]">
-                {item.categoria}
+                Mochila Corporativa
               </p>
 
               <h3 className="mt-2 text-[24px] leading-9 font-semibold text-[#6B6B6B]">
@@ -111,7 +132,7 @@ export default function Mochilas() {
 
               <div className="flex items-center gap-1 mt-4">
 
-                {Array.from({ length: item.rating }).map((_, index) => (
+                {Array.from({ length: 5 }).map((_, index) => (
                   <Star
                     key={index}
                     size={14}
@@ -203,6 +224,13 @@ export default function Mochilas() {
         </button>
 
       </div>
+
+      {selectedProduct && (
+        <ProductDetail
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
 
     </section>
   );

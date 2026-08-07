@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#6B6B6B] text-white py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8">          
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
@@ -18,39 +18,29 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Productos */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-5">Productos</h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Mochilas Corporativas", path: "/productos" },
-                { label: "Maletines", path: "/productos" },
-                { label: "Loncheras", path: "/productos" },
-                { label: "Merchandising", path: "/productos" },
-              ].map((item) => (
-                <li key={item.label}>
-                  <Link to={item.path} className="text-sm text-white/60 hover:text-white transition-colors">{item.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Empresa */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-5">Empresa</h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Sobre Nosotros", path: "/nosotros" },
-                { label: "Catálogo", path: "/productos" },
-                { label: "Términos", path: "#" },
-                { label: "Privacidad", path: "#" },
-              ].map((item) => (
-                <li key={item.label}>
-                  <Link to={item.path} className="text-sm text-white/60 hover:text-white transition-colors">{item.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                {/* Navegación */}
+                <div>
+                  <h4 className="text-sm font-semibold uppercase tracking-wider mb-5">
+                    Navegación
+                  </h4>
+                  <ul className="space-y-3">
+                    {[
+                      { label: "Inicio", path: "/" },
+                      { label: "Nosotros", path: "/nosotros" },
+                      { label: "Productos", path: "/productos" },
+                      { label: "Contacto", path: "/contacto" },
+                    ].map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          to={item.path}
+                          className="text-sm text-white/60 hover:text-white transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
           {/* Contacto */}
           <div>

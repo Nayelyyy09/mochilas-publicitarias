@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
+import ProductDetail from "../components/ProductDetail";
 
 const productos = [
   {
@@ -96,6 +97,7 @@ const productos = [
 const PRODUCTOS_POR_PAGINA = 8;
 export default function Chimpuneras() {
   const [paginaActual, setPaginaActual] = useState(1);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const totalPaginas = Math.ceil(
     productos.length / PRODUCTOS_POR_PAGINA
@@ -118,6 +120,14 @@ export default function Chimpuneras() {
 
           <div
             key={item.id}
+            onClick={() => setSelectedProduct({
+              image:item.imagen,
+              name:item.nombre,
+              code:item.codigo,
+              categoryLabel:item.categoria,
+              badge:"Nuevo",badgeColor:"bg-emerald-500",rating:item.rating??5,reviews:8,
+              description:"Chimpunera publicitaria personalizada.",
+              features:["Personalización con logo","Material resistente","Diseño corporativo","Mínimo 50 unidades"]})}
             className="border border-gray-200 bg-white hover:shadow-xl transition duration-300"
           >
 
@@ -243,6 +253,9 @@ export default function Chimpuneras() {
 
       </div>
 
-    </section>
+          {selectedProduct && (
+        <ProductDetail product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+      )}
+</section>
   );
 }

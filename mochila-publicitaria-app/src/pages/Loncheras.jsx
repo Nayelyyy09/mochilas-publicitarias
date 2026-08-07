@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
+import ProductDetail from "../components/ProductDetail";
 
 const productos = [
   {
@@ -88,6 +89,7 @@ const productos = [
 const PRODUCTOS_POR_PAGINA = 8;
 export default function Loncheras() {
   const [paginaActual, setPaginaActual] = useState(1);
+const [selectedProduct, setSelectedProduct] = useState(null);
 
   const totalPaginas = Math.ceil(
     productos.length / PRODUCTOS_POR_PAGINA
@@ -110,7 +112,21 @@ export default function Loncheras() {
 
           <div
             key={item.id}
-            className="border border-gray-200 bg-white hover:shadow-xl transition duration-300"
+            onClick={() =>
+            setSelectedProduct({
+              image: item.imagen,
+              name: item.nombre,
+              code: item.codigo,
+              categoryLabel: item.categoria ?? "Lonchera",
+              rating: item.rating ?? 5,
+              reviews: 8,
+              badge: "Nuevo",
+              badgeColor: "bg-emerald-500",
+              description: "Lonchera publicitaria personalizada.",
+              features:["Personalización con logo","Material resistente","Mínimo 50 unidades"]
+            })
+          }
+          className="border border-gray-200 bg-white hover:shadow-xl transition duration-300 cursor-pointer"
           >
 
             <div className="p-5">
@@ -127,6 +143,7 @@ export default function Loncheras() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
+            onClick={(e)=>e.stopPropagation()}
                 className="block w-full mt-4 py-3 rounded bg-[#6B6B6B] hover:bg-[#0D8B87] text-center text-white font-semibold transition"
               >
                 Cotizar
@@ -237,6 +254,14 @@ export default function Loncheras() {
 
       </div>
 
-    </section>
+    
+  {selectedProduct && (
+    <ProductDetail
+      product={selectedProduct}
+      onClose={() => setSelectedProduct(null)}
+    />
+  )}
+
+</section>
   );
 }
