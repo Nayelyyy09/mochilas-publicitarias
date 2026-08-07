@@ -104,13 +104,16 @@ export default function Canguros() {
                 alt={item.nombre}
                 className="w-full h-72 object-contain"
               />
-
-              <Link
-                to={`/productos/canguros/${item.codigo}`}
+              <a
+                href={`https://api.whatsapp.com/send?phone=51958438095&text=${encodeURIComponent(
+                  `Hola, me interesa cotizar el producto: ${item.nombre}.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full mt-4 py-3 rounded bg-[#6B6B6B] hover:bg-[#0D8B87] text-center text-white font-semibold transition"
               >
                 Cotizar
-              </Link>
+              </a>
 
               <p className="mt-4 text-xs uppercase text-[#6B6B6B]">
                 {item.categoria}
