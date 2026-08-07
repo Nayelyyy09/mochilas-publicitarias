@@ -31,7 +31,7 @@ const CATEGORIES = [
 
 const FEATURED = [
   {
-    image: "https://publiventa.pe/wp-content/uploads/2025/09/Mesa-de-trabajo-2-7.jpg",
+    image: "/imagenes/mochilas/Mochila Antamina.png",
     categoryLabel: "Mochila Corporativa",
     name: "Mochila Antamina",
     code: "MOCH001",
@@ -39,11 +39,17 @@ const FEATURED = [
     badgeColor: "bg-emerald-500",
     rating: 5,
     reviews: 8,
-    description: "Mochila publicitaria personalizada ideal para eventos corporativos y campañas de marketing.",
-    features: ["Personalización con logo", "Material resistente", "Diseño corporativo", "Mínimo 50 unidades"],
+    description:
+      "Mochila publicitaria personalizada ideal para eventos corporativos.",
+    features: [
+      "Personalización con logo",
+      "Material resistente",
+      "Diseño corporativo",
+      "Mínimo 50 unidades",
+    ],
   },
   {
-    image: "https://publiventa.pe/wp-content/uploads/2025/09/Mesa-de-trabajo-12-1.jpg",
+    image: "/imagenes/mochilas/Mochila Costa.png",
     categoryLabel: "Mochila Económica",
     name: "Mochila Costa",
     code: "MOCH005",
@@ -51,20 +57,32 @@ const FEATURED = [
     badgeColor: "bg-[#1A1A1A]",
     rating: 4,
     reviews: 15,
-    description: "Solución económica para campañas de marketing masivas y eventos corporativos.",
-    features: ["Precio competitivo", "Personalización incluida", "Material ligero", "Mínimo 100 unidades"],
+    description:
+      "Solución económica para campañas de marketing.",
+    features: [
+      "Precio competitivo",
+      "Personalización incluida",
+      "Material ligero",
+      "Mínimo 100 unidades",
+    ],
   },
   {
-    image: "https://publiventa.pe/wp-content/uploads/2025/09/Mesa-de-trabajo-5-5.jpg",
+    image: "/imagenes/mochilas/Caña Brava.png",
     categoryLabel: "Mochila Deportiva",
-    name: "Mochila Patagonia",
+    name: "Mochila Caña Brava",
     code: "MOCH016",
     badge: "Popular",
     badgeColor: "bg-amber-500",
     rating: 5,
     reviews: 18,
-    description: "Mochila deportiva para aventuras y eventos al aire libre.",
-    features: ["Diseño aventurero", "Resistente al agua", "Múltiples compartimentos", "Mínimo 50 unidades"],
+    description:
+      "Mochila deportiva para eventos corporativos.",
+    features: [
+      "Diseño aventurero",
+      "Resistente",
+      "Múltiples compartimentos",
+      "Mínimo 50 unidades",
+    ],
   },
 ];
 
@@ -171,11 +189,11 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="hidden lg:block"
             >
-              <img
-                src="https://publiventa.pe/wp-content/uploads/2025/09/Mesa-de-trabajo-2-7.jpg"
-                alt="Mochila Corporativa"
-                className="w-full max-w-md mx-auto drop-shadow-2xl"
-              />
+                      <img
+            src="/imagenes/mochilas/Mochila Antamina.png"
+            alt="Mochila Corporativa"
+            className="w-full max-w-md mx-auto drop-shadow-2xl"
+          />
             </motion.div>
           </div>
         </div>
