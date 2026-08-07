@@ -79,7 +79,7 @@ export default function Navbar() {
               <img
                 src={logoImg}
                 alt="Publiventa"
-                className="h-12 lg:h-18 w-auto"
+                className="h-8 lg:h-18 w-auto"
               />
             </Link>
 
