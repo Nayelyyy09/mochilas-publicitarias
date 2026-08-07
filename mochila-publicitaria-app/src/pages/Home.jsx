@@ -1,18 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Factory, Palette, Truck, Star, MessageCircle } from "lucide-react";
+import {
+  ArrowRight,
+  Factory,
+  Palette,
+  Truck,
+  Star,
+  MessageCircle,
+  Backpack,
+  ShoppingBag,
+  Briefcase,
+  Package,
+  Shirt,
+  UtensilsCrossed,
+  Snowflake,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductDetail from "../components/ProductDetail";
 
 const CATEGORIES = [
-  { icon: "🎒", title: "Mochilas", path: "/mochilas" },
-  { icon: "👜", title: "Neceseres", path: "/neceseres" },
-  { icon: "👟", title: "Chimpuneras", path: "/chimpuneras" },
-  { icon: "💼", title: "Maletines", path: "/maletines" },
-  { icon: "🎽", title: "Canguros", path: "/canguros" },
-  { icon: "🍱", title: "Loncheras", path: "/loncheras" },
-  { icon: "🎒", title: "Morrales", path: "/morrales" },
-  { icon: "🧊", title: "Coolers", path: "/coolers" },
+  { icon: Backpack, title: "Mochilas", path: "/mochilas" },
+  { icon: ShoppingBag, title: "Neceseres", path: "/neceseres" },
+  { icon: Package, title: "Chimpuneras", path: "/chimpuneras" },
+  { icon: Briefcase, title: "Maletines", path: "/maletines" },
+  { icon: Shirt, title: "Canguros", path: "/canguros" },
+  { icon: UtensilsCrossed, title: "Loncheras", path: "/loncheras" },
+  { icon: Backpack, title: "Morrales", path: "/morrales" },
+  { icon: Snowflake, title: "Coolers", path: "/coolers" },
 ];
 
 const FEATURED = [
@@ -187,8 +201,11 @@ export default function Home() {
                   to={cat.path}
                   className="group block bg-white rounded-xl p-6 lg:p-8 text-center border border-gray-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-300"
                 >
-                  <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl group-hover:bg-[#1A1A1A] transition-colors duration-300">
-                    {cat.icon}
+                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#6B6B6B] transition-all duration-300">
+                    <cat.icon
+                      size={30}
+                      className="text-[#6B6B6B] group-hover:text-white transition-colors duration-300"
+                    />
                   </div>
                   <h3 className="font-semibold text-gray-800 mb-2">{cat.title}</h3>
                   <span className="text-sm text-gray-400">{cat.count}</span>
