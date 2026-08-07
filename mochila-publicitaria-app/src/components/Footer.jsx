@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <img src={logoImg} alt="Mochilas Publicitarias" className="h-30 w-auto" />
+              <img src={logoImg} alt="Mochilas Publicitarias" className="h-12 w-auto" />
             </Link>
             <p className="text-sm text-white/70 leading-relaxed">
               Fabricantes directos de mochilas corporativas y artículos publicitarios en Perú. Más de 15 años de experiencia brindando soluciones de merchandising a empresas de todo el país.
