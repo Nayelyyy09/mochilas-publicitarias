@@ -136,65 +136,63 @@ function ProductCard({ product, index, onSelect }) {
 
 export default function Home() {
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const banners = [
+  "/imagenes/banners/Banner_1.png",
+  "/imagenes/banners/Banner_2.png",
+  "/imagenes/banners/Banner_3.png",
+];
 
-  useEffect(() => {
-    document.title = "Mochilas Publicitarias | Soluciones Corporativas";
-  }, []);
+const [currentBanner, setCurrentBanner] = useState(0);
+
+    useEffect(() => {
+      document.title = "Mochilas Publicitarias | Soluciones Corporativas";
+
+      const interval = setInterval(() => {
+        setCurrentBanner((prev) => (prev + 1) % banners.length);
+      }, 4000);
+
+      return () => clearInterval(interval);
+    }, []);
 
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#6B6B6B] to-[#6B6B6B] text-white py-16 lg:py-24 relative overflow-hidden">
+      <section className="bg-[#6B6B6B] relative overflow-hidden">
         <div className="absolute top-[-50%] right-[-10%] w-[600px] h-[600px] bg-[#1A1A1A]/20 rounded-full blur-[100px]" />
-        <div className="w-full px-6 lg:px-12 relative z-10">
-          <div className="grid lg:grid-cols-[60%_40%] gap-12 items-center w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
-                ✨ Fabricantes directos en Perú
-              </span>
-              <h1 className="font-heading text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
-                Mochilas que potencian tu marca
-              </h1>
-              <p className="text-lg text-white/80 mb-8 max-w-lg">
-                Soluciones corporativas de alta calidad para congresos, eventos y promociones. Personalización completa con tu logotipo.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/productos" className="inline-flex items-center gap-2 px-8 py-4 bg-[#1A1A1A] text-white font-semibold rounded-lg hover:bg-[#1E1E1E] hover:-translate-y-0.5 transition-all duration-300">
-                  Ver Catálogo
-                </Link>
-                <Link to="/contacto" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 hover:border-white transition-all duration-300">
-                  Solicitar Cotización
-                </Link>
-              </div>
-              <div className="flex gap-10 mt-12 pt-8 border-t border-white/10">
-                {[
-                  { n: "500+", l: "Empresas" },
-                  { n: "10K+", l: "Mochilas" },
-                  { n: "15+", l: "Años" },
-                ].map((s) => (
-                  <div key={s.l}>
-                    <p className="font-heading text-2xl font-bold">{s.n}</p>
-                    <p className="text-sm text-white/60">{s.l}</p>
+        <div className="w-full relative z-10">
+          <div className="grid lg:grid-cols-1 gap-12 items-center w-full">
+                <motion.div
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  className="hidden lg:flex w-full h-full"
+                >
+                  <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl">
+
+                    <img
+                      src={banners[currentBanner]}
+                      alt={`Banner ${currentBanner + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+
+                    {/* Indicadores */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                      {banners.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentBanner(index)}
+                          className={`w-3 h-3 rounded-full transition ${
+                            currentBanner === index
+                              ? "bg-white"
+                              : "bg-white/50"
+                          }`}
+                        />
+                      ))}
+                    </div>
+
                   </div>
-                ))}
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="hidden lg:block"
-            >
-                      <img
-            src="/imagenes/mochilas/Mochila Antamina.png"
-            alt="Mochila Corporativa"
-            className="w-full max-w-md mx-auto drop-shadow-2xl"
-          />
-            </motion.div>
+                </motion.div>
+
           </div>
         </div>
       </section>
