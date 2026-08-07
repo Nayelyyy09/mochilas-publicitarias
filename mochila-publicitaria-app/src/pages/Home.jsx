@@ -136,10 +136,16 @@ function ProductCard({ product, index, onSelect }) {
 
 export default function Home() {
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const banners = [
+const bannersDesktop = [
   "/imagenes/banners/Banner_1.png",
   "/imagenes/banners/Banner_2.png",
   "/imagenes/banners/Banner_3.png",
+];
+
+const bannersMobile = [
+  "/imagenes/banners/Banner_movil1.png",
+  "/imagenes/banners/Banner_movil2.png",
+  "/imagenes/banners/Banner_movil3.png",
 ];
 
 const [currentBanner, setCurrentBanner] = useState(0);
@@ -148,7 +154,7 @@ const [currentBanner, setCurrentBanner] = useState(0);
       document.title = "Mochilas Publicitarias | Soluciones Corporativas";
 
       const interval = setInterval(() => {
-        setCurrentBanner((prev) => (prev + 1) % banners.length);
+        setCurrentBanner((prev) => (prev + 1) % bannersDesktop.length);
       }, 4000);
 
       return () => clearInterval(interval);
@@ -165,19 +171,23 @@ const [currentBanner, setCurrentBanner] = useState(0);
                   initial={{ opacity: 0, x: 40 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3, duration: 0.8 }}
-                  className="hidden lg:flex w-full h-full"
+                  className="flex w-full h-full"
                 >
                   <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl">
 
-                    <img
-                      src={banners[currentBanner]}
-                      alt={`Banner ${currentBanner + 1}`}
-                      className="w-full h-full object-cover"
-                    />
+                  <img
+                    src={
+                      window.innerWidth < 1024
+                        ? bannersMobile[currentBanner]
+                        : bannersDesktop[currentBanner]
+                    }
+                    alt={`Banner ${currentBanner + 1}`}
+                    className="w-full h-full object-cover"
+                  />
 
                     {/* Indicadores */}
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                      {banners.map((_, index) => (
+                      {bannersDesktop.map((_, index) => (
                         <button
                           key={index}
                           onClick={() => setCurrentBanner(index)}
